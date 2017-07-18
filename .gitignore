@@ -1,0 +1,14 @@
+# Flask App Builder
+*.pyc
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# virtualenv
+venv/
+
+# workspace files are user-specific
+*.sublime-workspace
+
+# IDE config
+.idea/
