@@ -15,10 +15,15 @@
 
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="#">Home</a>
+                    <a class="nav-link" href="{{ url_for('homepage_blueprint.index') }}">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url_for('initiatives_blueprint.index') }}">Initiatives</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{ url_for('actions_blueprint.index') }}">Actions</a>
                 </li>
                 <li class="dropdown">
-
                     <ul class="dropdown-menu scrollable-menu">
 
                     </ul>
