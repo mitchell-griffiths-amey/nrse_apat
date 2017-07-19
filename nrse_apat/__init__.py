@@ -10,6 +10,8 @@ from nrse_apat import auth
 from nrse_apat.config import config
 
 from nrse_apat.homepage.views import homepage_blueprint
+from nrse_apat.actions.views import actions_blueprint
+from nrse_apat.initiatives.views import initiatives_blueprint
 
 def create_app(name, environment=None):
 
@@ -35,11 +37,13 @@ def get_app(name, environment=None):
 
     # Initiate extentions
     app.register_blueprint(homepage_blueprint, url_prefix='/home')
+    app.register_blueprint(actions_blueprint, url_prefix='/actions')
+    app.register_blueprint(initiatives_blueprint, url_prefix='/initiatives')
 
     @app.route('/')
     @login_required
     def index():
-        return redirect(url_for('homepage_blueprint.homepage_index'))
+        return redirect(url_for('homepage_blueprint.index'))
 
     app.secret_key = app.config['SECRET_KEY']
 
